@@ -1,0 +1,14 @@
+<template name="cardsOnHand">
+  You have {{cardsOnHand.length}} cards in hands. <br>
+  {{#each cardsOnHand}}
+    {{#if equals this.cardType "money"}}
+      {{> cardMoney this}}
+    {{/if}}
+    {{#if equals this.cardType "property"}}
+      {{> card this}}
+    {{/if}}
+    {{#if equals this.cardType "action"}}
+      {{> cardAction this}}
+    {{/if}}
+  {{/each}}
+</template>
