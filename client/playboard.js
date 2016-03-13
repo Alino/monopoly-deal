@@ -8,8 +8,9 @@ Template.playboard.helpers({
 });
 
 Template.playboard.events({
-  'click #buttonNewGame': function(e) {
+  'click [data-endGame]': function(e) {
     e.preventDefault();
-    newGame();
+    endGame();
   }
+
 });

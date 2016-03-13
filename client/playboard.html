@@ -1,12 +1,15 @@
 <template name="playboard">
-  <button type="button" name="button" id="buttonNewGame">new game</button>
-  <br><br>
-  there are {{cardsOnBoard.length}} cards on board.
-    <br>
+<div class="text-center">
     {{> deck}}
-    <br><br>
-
-  You are {{currentPlayerName}}
-  <br>
-  {{> cardsOnHand}}
+    <br>
+    {{> cardsOnHand}}
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            You are {{currentPlayerName}}
+            There are {{cardsOnBoard.length}} cards on board.
+            You have {{cardsOnHand.length}} cards in hands. <br>
+            <button class="btn-default" data-endGame>Ukoncit hru</button>
+        </div>
+    </nav>
+</div>
 </template>

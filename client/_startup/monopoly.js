@@ -1,4 +1,5 @@
 if (Meteor.isClient) {
+Session.set('isGameInProgress', false);
 Session.setDefault('cardsOnBoard', []);
 players = [];
 
@@ -140,8 +141,12 @@ newGame = function() {
   vytvorKarty();
   zamiesajKarty();
   rozdajKarty();
+  Session.set('isGameInProgress', true);
 };
 
+endGame = function() {
+  Session.set('isGameInProgress', false);
+};
 
 
 

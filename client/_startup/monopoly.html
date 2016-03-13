@@ -3,5 +3,11 @@
 </head>
 
 <body>
-  {{> playboard}}
+<div class="container">
+{{#unless isGameInProgress}}
+    {{> createNewGame}}
+{{else}}
+    {{> playboard}}
+{{/unless}}
+</div>
 </body>
