@@ -1,0 +1,19 @@
+<template name="deck">
+<div class="playingCards">
+    <ul class="deck">
+        {{#each cardsOnBoard}}
+        <li>
+            <div class="card back">*</div>
+        </li>
+        {{/each}}
+        <!--
+                <li>
+                    <a class="card rank-7 diams" href="#">
+                        <span class="rank">7</span>
+                        <span class="suit">&diams;</span>
+                    </a>
+                </li>
+        -->
+    </ul>
+    </div>
+</template>

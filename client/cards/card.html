@@ -33,9 +33,25 @@
   <tr>
    <td class="set-count">
     <div class="set-count-inner">
+    {{#if equals index 2}}
+        <div class="set-count-card set-count-card-1">
+            <div class="set-count-card-top" style="background-color: {{color}}"></div>
+            <div class="set-count-card-content">3</div>
+        </div>
+        <div class="set-count-card set-count-card-2">
+            <div class="set-count-card-top" style="background-color: {{color}}"></div>
+            <div class="set-count-card-content">2</div>
+        </div>
+    {{/if}}
+    {{#if equals index 1}}
+    <div class="set-count-card set-count-card-2">
+        <div class="set-count-card-top" style="background-color: {{color}}"></div>
+        <div class="set-count-card-content">2</div>
+    </div>
+    {{/if}}
      <div class="set-count-card set-count-card-3">
       <div class="set-count-card-top" style="background-color: {{color}}"></div>
-      <div class="set-count-card-content">1</div>
+      <div class="set-count-card-content">{{indexFrom1}}</div>
      </div>
     </div>
    </td>

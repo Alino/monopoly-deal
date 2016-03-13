@@ -13,3 +13,9 @@ Template.card.helpers({
     return "#167C00"
   }
 });
+
+Template.cardRentRow.helpers({
+  indexFrom1: function() {
+    return this.index + 1;
+  }
+});

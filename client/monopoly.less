@@ -1,22 +1,24 @@
+@downScaleModifier: 1;
+
 .card {
   font-family: Helvetica, Verdana, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 12px / @downScaleModifier;
   background-color: white;
   color: black;
   display: block;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 8px / @downScaleModifier;
   /* box-shadow: 2px 2px 4px #ccc; */
   /* aspect ratio (56mm:87mm): 2:3 */
-  width: 200px;
-  height: 333px;
-  margin: 5px !important;
+  width: 200px / @downScaleModifier;
+  height: 333px / @downScaleModifier;
+  margin: 5px / @downScaleModifier !important;
   padding: 0;
 }
 .card .card-inner {
   border: 1px solid #000;
-  margin: 4%;
-  padding: 4%;
+  margin: 4% / @downScaleModifier;
+  padding: 4% / @downScaleModifier;
   height: 88%;
   position: relative;
 }
@@ -43,7 +45,7 @@
   overflow: hidden;
   font-weight: bold;
   padding: 0;
-  height: 4.25em;
+  height: 4.25em / @downScaleModifier;
   margin-top: 5px;
 }
 .card .title > div {
@@ -58,8 +60,8 @@
 }
 .card .title > div > div > div {
   margin: 0 auto;
-  max-width: 10em;
-  width: 10em;
+  max-width: 10em / @downScaleModifier;
+  width: 10em / @downScaleModifier;
 }
 
 .card .bank-value {
@@ -68,8 +70,8 @@
   left: 1%;
   border: 3px double #000;
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
+  width: 3em / @downScaleModifier;
+  height: 3em / @downScaleModifier;
   text-align: center;
   vertical-align: middle;
   background-color: white;
@@ -79,9 +81,9 @@
   border-radius: 50%;
   border: 5px double #888;
   font-size: 2em;
-  width: 4em;
-  height: 4em;
-  line-height: 4em
+  width: 4em / @downScaleModifier;
+  height: 4em / @downScaleModifier;
+  line-height: 4em / @downScaleModifier;
 }
 .card .bank-value.bottom {
   position: absolute;
@@ -91,7 +93,7 @@
   right: 1%;
 }
 .card .bank-value .bank-value-inner {
-  margin: 0.75em 0;
+  margin: 0.60em / @downScaleModifier 0;
 }
 .card .currency, .card .currency {
   text-decoration: none;
@@ -113,20 +115,20 @@
   border-bottom: 1px solid #000;
 }
 .card .amount {
-  font-size: 1.5em;
+  font-size: 1.5em / @downScaleModifier;
 }
 .card .rent-rate .amount {
-  font-size: 1.8em;
+  font-size: 1.8em / @downScaleModifier;
 }
 .card .amount:after, .card .amount:after {
   content: 'M';
-  font-size: 0.4em;
+  font-size: 0.4em / @downScaleModifier;
   color: #333;
   font-weight: lighter;
 }
 
 .card .help-text {
-  font-size: 0.75em;
+  font-size: 0.75em / @downScaleModifier;
 }
 
 .card table.rent-rate {
@@ -135,7 +137,7 @@
   border-collapse: collapse;
   position: relative;
   table-layout: fixed;
-  margin-top: 1em;
+  margin-top: 1em / @downScaleModifier;
 }
 
 .card table.rent-rate tr.header-row {
@@ -147,15 +149,15 @@
 }
 
 .card table.rent-rate tr.header-row td.help-heading {
-  font-size: 0.75em;
+  font-size: 0.75em / @downScaleModifier;
   width: 50%;
-  line-height: 1em;
+  line-height: 1em / @downScaleModifier;
 }
 
 .card table.rent-rate tr.header-row td.rent-heading {
-  font-size: 1.4em;
+  font-size: 1.4em / @downScaleModifier;
   width: 36%;
-  line-height: 1em;
+  line-height: 1em / @downScaleModifier;
 }
 
 .card table.rent-rate tr td.set-count {
@@ -165,23 +167,23 @@
 }
 .card table.rent-rate tr td.set-count .set-count-inner {
   position: relative;
-  height: 3em;
+  height: 3em / @downScaleModifier;
   margin: 0;
 }
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card {
   position: absolute;
   bottom: 0;
   margin: 0;
-  width: 2em;
+  width: 2em / @downScaleModifier;
   text-align: center;
   border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 4px / @downScaleModifier;
   padding: 0;
   overflow: hidden;
 }
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card-1 {
   z-index: 1;
-  right: 0.75em;
+  right: 0.75em / @downScaleModifier;
   transform: rotate(-40deg);
   -webkit-transform: rotate(-40deg);
   transform-origin: 45% 50%;
@@ -189,7 +191,7 @@
 }
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card-2 {
   z-index: 2;
-  right: 0.5em;
+  right: 0.5em / @downScaleModifier;
   transform: rotate(-15deg);
   -webkit-transform: rotate(-15deg);
   transform-origin: 30% 40%;
@@ -201,12 +203,12 @@
 }
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card-top {
   background-color: #4E86DF;
-  height: 0.75em;
+  height: 0.75em / @downScaleModifier;
   margin: 0;
 }
 .card table.rent-rate tr td.set-count .set-count-inner .set-count-card-content {
-  line-height: 1.5em;
-  font-size: 1.2em;
+  line-height: 1.5em / @downScaleModifier;
+  font-size: 1.2em / @downScaleModifier;
   background-color: white;
   border-radius: 0 0 4px 4px;
   margin: 0;
@@ -234,7 +236,7 @@
 .card table.rent-rate tr td.rent-rate {
   width: 25%;
   text-align: right;
-  padding: 0 1em 0 0.25em;
+  padding: 0 1em / @downScaleModifier 0 0.25em / @downScaleModifier;
 }
 .card table.rent-rate tr td.rent-rate div {
   margin: 0;
@@ -243,7 +245,7 @@
 }
 .card table.rent-rate tr td.full-set > div {
   position: absolute;
-  bottom: 1.8em;
+  bottom: 1.8em / @downScaleModifier;
   width: 100%;
   text-align: center;
   margin: 0;

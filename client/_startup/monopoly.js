@@ -96,7 +96,7 @@ vytvorKarty = function() {
   znicKarty();
   console.log("vytvaram karty");
   // 20 money cards, including 6 1M cards, 5 2M cards, 3 3M cards, 3 4M cards, 2 5M cards and 1 10M card.
-  // for (var i=0; i<6; i++) { kartaPenazi = new KartaPenazi(1); }
+   for (var i=0; i<6; i++) { kartaPenazi = new KartaPenazi(1); }
   // for (var i=0; i<5; i++) { kartaPenazi = new KartaPenazi(2); }
   // for (var i=0; i<3; i++) { kartaPenazi = new KartaPenazi(3); }
   // for (var i=0; i<3; i++) { kartaPenazi = new KartaPenazi(4); }

@@ -5,11 +5,11 @@ Template.playboard.helpers({
   cardsOnBoard: function() {
     return Session.get('cardsOnBoard');
   }
-})
+});
 
 Template.playboard.events({
   'click #buttonNewGame': function(e) {
     e.preventDefault();
     newGame();
   }
-})
+});
