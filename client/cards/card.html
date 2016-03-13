@@ -22,7 +22,7 @@
    </tr>
     {{#each rent}}
 
-      {{> cardRentRow isLastRow=false}}
+      {{> cardRentRow color=../color rentValue=this index=@index rent=../rent}}
     {{/each}}
   </tbody></table>
  </div>
@@ -44,11 +44,11 @@
    </td>
    <td class="rent-rate">
     <div class="rent-rate">
-     <span class="currency"></span><span class="amount">{{rent.$0}}</span>
+     <span class="currency"></span><span class="amount">{{rentValue}}</span>
     </div>
    </td>
   </tr>
-  {{#if isLastRow}}
+  {{#if indexEquals index rent.length}}
   <tr>
    <td class="full-set"><div><span>FULL SET</span></div></td>
   </tr>

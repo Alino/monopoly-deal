@@ -12,4 +12,4 @@ Template.card.helpers({
     }
     return "#167C00"
   }
-})
+});
