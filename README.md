@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Alino/monopoly-deal.png?label=ready&title=Ready)](https://waffle.io/Alino/monopoly-deal)
 # monopoly-deal
 monopoly deal mulitplayer card game
 
