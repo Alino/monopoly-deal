@@ -1,8 +1,39 @@
 <template name="createNewGame">
-    <div class="text-center createNewGame">
+{{#unless isWaitingForOtherPlayers}}
+<div class="text-center createNewGame">
     Vitaj v hre <strong>monopoly deal!</strong> <br>
-    Pre kolkatich hracov chces zalozit hru? <br>
-    <input type="text" min="2" max="2" value="2" data-numberOfPlayers /> <br>
-    <button type="button" name="button" id="buttonNewGame" class="btn btn-success">Vytvorit hru</button>
+</div>
+
+<div class="col-lg-4 col-lg-offset-4">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputNumberOfPlayers" class="col-sm-4 control-label">Pocet hracov</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputNumberOfPlayers" value="2" data-numberOfPlayers>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputplayerName" class="col-sm-4 control-label">Tvoje meno</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputplayerName" placeholder="nick" value="{{randomName}}" data-playerName>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-6">
+                <button type="submit" name="button" id="buttonNewGame" class="btn btn-success">Vytvorit hru</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{else}}
+    <div class="text-center waitingForOtherPlayers">
+        <p>Cakam na druheho hraca...</p>
+        <div class="cssload-container">
+            <div class="cssload-dot"></div>
+            <div class="step" id="cssload-s1"></div>
+            <div class="step" id="cssload-s2"></div>
+            <div class="step" id="cssload-s3"></div>
+        </div>
     </div>
+{{/unless}}
 </template>

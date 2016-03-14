@@ -1,5 +1,24 @@
+if (Meteor.isServer) {
+  Meteor.publish('userPresence', function() {
+    // Setup some filter to find the users your user
+    // cares about. It's unlikely that you want to publish the
+    // presences of _all_ the users in the system.
+
+    // If for example we wanted to publish only logged in users we could apply:
+    // filter = { userId: { $exists: true }};
+    var filter = {};
+
+    return Presences.find(filter, { fields: { state: true, userId: true }});
+  });
+}
+
 if (Meteor.isClient) {
-Session.set('isGameInProgress', false);
+Meteor.startup(function(){
+    Meteor.subscribe('userPresence');
+});
+
+Session.setDefault('isGameInProgress', false);
+Session.setDefault('isWaitingForOtherPlayers', false);
 Session.setDefault('cardsOnBoard', []);
 players = [];
 
@@ -137,11 +156,21 @@ rozdajKarty = function() {
 
 newGame = function() {
   console.log('creating new game');
-  vytvorHracov();
-  vytvorKarty();
-  zamiesajKarty();
-  rozdajKarty();
-  Session.set('isGameInProgress', true);
+  Session.set('isWaitingForOtherPlayers', true);
+  var cursor = Presences.find();
+  cursor.observeChanges({
+    added: function(){
+      if (Presences.find().count() > 1) {
+        vytvorHracov();
+        vytvorKarty();
+        zamiesajKarty();
+        rozdajKarty();
+        Session.set('isWaitingForOtherPlayers', false);
+        Session.set('isGameInProgress', true);
+      }
+    }
+  });
+
 };
 
 endGame = function() {

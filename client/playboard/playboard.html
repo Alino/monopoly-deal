@@ -5,10 +5,12 @@
     {{> cardsOnHand}}
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
+            <p class="navbar-text">
             You are {{currentPlayerName}}
             There are {{cardsOnBoard.length}} cards on board.
-            You have {{cardsOnHand.length}} cards in hands. <br>
-            <button class="btn-default" data-endGame>Ukoncit hru</button>
+            You have {{cardsOnHand.length}} cards in hands.
+            </p>
+            <button class="btn btn-default navbar-btn navbar-right" data-endGame>Ukoncit hru</button>
         </div>
     </nav>
 </div>
